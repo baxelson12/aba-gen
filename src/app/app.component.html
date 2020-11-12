@@ -1,3 +1,69 @@
-<div class="text-green-400">
-  Hello
+<!-- Nav -->
+<nav class="w-full bg-white shadow py-5 mb-16">
+  <div class="container">
+    <h1 class="uppercase text-xl font-bold">ABA Generator</h1>
+  </div>
+</nav>
+
+<!-- Page -->
+<div class="container">
+  <!-- Sender -->
+  <div class="mb-16">
+    <h2 class="mb-3 text-xl font-medium">Sending Party:</h2>
+    <div class="px-4 py-5 shadow bg-white rounded flex justify-between">
+      <div class="w-1/8 pr-3">
+        <rounded-input label="Bank" inputType="number" placeholder="235235"></rounded-input>
+      </div>
+      <div class="w-1/4 pr-3">
+        <rounded-input label="User" inputType="text" placeholder="Brad"></rounded-input>
+      </div>
+      <div class="w-1/4 pr-3">
+        <rounded-input label="User Number" inputType="number" placeholder="6546565"></rounded-input>
+      </div>
+      <div class="w-1/4 pr-3">
+        <rounded-input label="Description" inputType="text" placeholder="Lorem ipsum"></rounded-input>
+      </div>
+    </div>
+  </div>
+  <!-- Recipient -->
+  <div class="mb-16">
+    <div class="flex justify-between items-center">
+      <h2 class="mb-3 text-xl font-medium">Receiving Party:</h2>
+      <button>
+      <svg class="h-6 w-6 fill-current text-green-500" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z" />
+      </svg>
+      </button>
+    </div>
+    <div class="px-4 py-5 shadow bg-white rounded flex flex-col">
+      <div class="mb-3 w-full flex">
+        <div class="w-1/8 pr-3">
+          <rounded-input label="BSB" inputType="text" placeholder="650-320"></rounded-input>
+        </div>
+        <div class="w-1/4 pr-3">
+          <rounded-input label="Transcode" inputType="number" placeholder="98745588"></rounded-input>
+        </div>
+        <div class="w-1/2 pr-3">
+          <rounded-input label="Account" inputType="text" placeholder="New Company"></rounded-input>
+        </div>
+      </div>
+      <div class="w-full flex">
+        <div class="w-1/4 pr-3">
+          <rounded-input label="Amount" inputType="number" placeholder="50000.00">
+            <span class="mr-1">$</span>
+          </rounded-input>
+        </div>
+        <div class="w-1/2 pr-3">
+          <rounded-input label="Reference" inputType="text" placeholder="Lorem Ipsum"></rounded-input>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Functions -->
+  <div>
+    <button class="px-4 py-2 bg-blue-500 rounded text-white">
+      Download ABA
+    </button>
+  </div>
 </div>
