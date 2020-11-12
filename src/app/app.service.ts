@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { saveAs } from 'file-saver';
 import * as ABA from 'aba-generator';
 
 @Injectable({
@@ -26,6 +27,11 @@ export class AppService {
 
     const file = aba.generate([trans]);
 
-    console.log(file);
+    this.download(file);
+  }
+
+  private download(file: string) {
+    const blob = new Blob([file], { type: 'text/plain;charset=utf-8' });
+    saveAs(blob, 'ABA.txt');
   }
 }
