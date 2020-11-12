@@ -12,39 +12,36 @@
     <legend class="mb-3 text-xl font-medium">Sending Party:</legend>
     <div name="sender" class="px-4 py-5 shadow bg-white rounded flex justify-between">
       <div class="w-1/8 pr-3">
-        <div class="mb-2">
-          <label for="bank" class="text-xs text-gray-900">Bank</label>
-          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-            <input formControlName="bank" type="text" aria-label="Bank" class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="6546">
-          </div>
-        </div>
+        <rounded-input
+          formControlName="bank"
+          label="Bank"
+          input-type="string"
+          placeholder="6546"
+          aria-label="Bank"></rounded-input>
       </div>
       <div class="w-1/4 pr-3">
-        <div class="mb-2">
-          <label for="user" class="text-xs text-gray-900">User</label>
-          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-            <input formControlName="user" type="text" aria-label="User"
-              class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="Brad">
-          </div>
-        </div>
+        <rounded-input
+          formControlName="user"
+          label="User"
+          input-type="string"
+          placeholder="Brad"
+          aria-label="User"></rounded-input>
       </div>
       <div class="w-1/4 pr-3">
-        <div class="mb-2">
-          <label for="user_number" class="text-xs text-gray-900">User Number</label>
-          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-            <input formControlName="user_number" type="text" aria-label="User Number"
-              class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="6546565">
-          </div>
-        </div>
+        <rounded-input
+          formControlName="user_number"
+          label="User Number"
+          input-type="number"
+          placeholder="6546565"
+          aria-label="User Number"></rounded-input>
       </div>
       <div class="w-1/4 pr-3">
-        <div class="mb-2">
-          <label for="description" class="text-xs text-gray-900">Description</label>
-          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-            <input formControlName="description" type="text" aria-label="Description"
-              class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="Lorem Ipsum">
-          </div>
-        </div>
+        <rounded-input
+          formControlName="description"
+          label="Description"
+          input-type="string"
+          placeholder="Lorem Ipsum"
+          aria-label="Description"></rounded-input>
       </div>
     </div>
   </div>
@@ -71,52 +68,46 @@
       </div>
       <div class="mb-3 w-full flex">
         <div class="w-1/8 pr-3">
-          <div class="mb-2">
-            <label for="bsb" class="text-xs text-gray-900">BSB</label>
-            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-              <input formControlName="bsb" type="text" aria-label="BSB"
-                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="650-320">
-            </div>
-          </div>
+          <rounded-input
+            formControlName="bsb"
+            label="BSB"
+            input-type="string"
+            placeholder="650-320"
+            aria-label="BSB"></rounded-input>
         </div>
         <div class="w-1/4 pr-3">
-          <div class="mb-2">
-            <label for="transcode" class="text-xs text-gray-900">Transcode</label>
-            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-              <input formControlName="transcode" type="text" aria-label="Transcode"
-                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="98745588">
-            </div>
-          </div>
+          <rounded-input
+            formControlName="transcode"
+            label="Transcode"
+            input-type="string"
+            placeholder="98745588"
+            aria-label="Transcode"></rounded-input>
         </div>
         <div class="w-1/2 pr-3">
-          <div class="mb-2">
-            <label for="account" class="text-xs text-gray-900">Account</label>
-            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-              <input formControlName="account" type="text" aria-label="Account"
-                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="New Company">
-            </div>
-          </div>
+          <rounded-input
+            formControlName="account"
+            label="Account"
+            input-type="string"
+            placeholder="New Company"
+            aria-label="Account"></rounded-input>
         </div>
       </div>
       <div class="w-full flex">
         <div class="w-1/4 pr-3">
-          <div class="mb-2">
-            <label for="amount" class="text-xs text-gray-900">Amount</label>
-            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-              <span class="mr-1">$</span>
-              <input formControlName="amount" type="text" aria-label="Amount"
-                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="50000.00">
-            </div>
-          </div>
+          <rounded-input
+            formControlName="amount"
+            label="Amount"
+            input-type="number"
+            placeholder="5000.00"
+            aria-label="Amount"></rounded-input>
         </div>
         <div class="w-1/2 pr-3">
-          <div class="mb-2">
-            <label for="reference" class="text-xs text-gray-900">Reference</label>
-            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
-              <input formControlName="reference" type="text" aria-label="Reference"
-                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="Lorem Ipsum">
-            </div>
-          </div>
+          <rounded-input
+            formControlName="reference"
+            label="Reference"
+            input-type="string"
+            placeholder="Lorem Ipsum"
+            aria-label="Reference"></rounded-input>
         </div>
       </div>
     </div>
@@ -126,5 +117,8 @@
     <button class="px-4 py-2 bg-blue-500 rounded text-white" type="submit">
       Download ABA
     </button>
+  </div>
+  <div>
+    {{ abaForm.value | json }}
   </div>
 </form>
