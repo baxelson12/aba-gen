@@ -1,12 +1,12 @@
 <!-- Nav -->
 <nav class="w-full bg-white shadow py-5 mb-16">
-  <div class="container">
+  <div class="container px-4">
     <h1 class="uppercase text-xl font-bold">ABA Generator</h1>
   </div>
 </nav>
 
 <!-- Page -->
-<form [formGroup]="abaForm" (ngSubmit)="onSubmit()" class="container">
+<form [formGroup]="abaForm" (ngSubmit)="onSubmit()" class="container px-4">
   <!-- Sender -->
   <div formGroupName="sender" class="mb-16">
     <legend class="mb-3 text-xl font-medium">Sending Party:</legend>
