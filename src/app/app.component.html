@@ -6,64 +6,116 @@
 </nav>
 
 <!-- Page -->
-<div class="container">
+<form [formGroup]="abaForm" (ngSubmit)="onSubmit()" class="container">
   <!-- Sender -->
-  <div class="mb-16">
-    <h2 class="mb-3 text-xl font-medium">Sending Party:</h2>
-    <div class="px-4 py-5 shadow bg-white rounded flex justify-between">
+  <div formGroupName="sender" class="mb-16">
+    <legend class="mb-3 text-xl font-medium">Sending Party:</legend>
+    <div name="sender" class="px-4 py-5 shadow bg-white rounded flex justify-between">
       <div class="w-1/8 pr-3">
-        <rounded-input label="Bank" inputType="number" placeholder="235235"></rounded-input>
+        <div class="mb-2">
+          <label for="bank" class="text-xs text-gray-900">Bank</label>
+          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+            <input formControlName="bank" type="text" aria-label="Bank" class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="6546">
+          </div>
+        </div>
       </div>
       <div class="w-1/4 pr-3">
-        <rounded-input label="User" inputType="text" placeholder="Brad"></rounded-input>
+        <div class="mb-2">
+          <label for="user" class="text-xs text-gray-900">User</label>
+          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+            <input formControlName="user" type="text" aria-label="User"
+              class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="Brad">
+          </div>
+        </div>
       </div>
       <div class="w-1/4 pr-3">
-        <rounded-input label="User Number" inputType="number" placeholder="6546565"></rounded-input>
+        <div class="mb-2">
+          <label for="user_number" class="text-xs text-gray-900">User Number</label>
+          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+            <input formControlName="user_number" type="text" aria-label="User Number"
+              class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="6546565">
+          </div>
+        </div>
       </div>
       <div class="w-1/4 pr-3">
-        <rounded-input label="Description" inputType="text" placeholder="Lorem ipsum"></rounded-input>
+        <div class="mb-2">
+          <label for="description" class="text-xs text-gray-900">Description</label>
+          <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+            <input formControlName="description" type="text" aria-label="Description"
+              class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="Lorem Ipsum">
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <!-- Recipient -->
-  <div class="mb-16">
+  <div class="mb-16" formArrayName="recipient">
     <div class="flex justify-between items-center">
-      <h2 class="mb-3 text-xl font-medium">Receiving Party:</h2>
-      <button>
+      <legend class="mb-3 text-xl font-medium">Receiving Party:</legend>
+      <button (click)="addRecipient()">
       <svg class="h-6 w-6 fill-current text-green-500" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z" />
       </svg>
       </button>
     </div>
-    <div class="px-4 py-5 shadow bg-white rounded flex flex-col">
+    <div *ngFor="let recipient of recipient.controls; let i=index" [formGroupName]="i" class="px-4 py-5 mb-3 shadow bg-white rounded flex flex-col">
       <div class="mb-3 w-full flex">
         <div class="w-1/8 pr-3">
-          <rounded-input label="BSB" inputType="text" placeholder="650-320"></rounded-input>
+          <div class="mb-2">
+            <label for="bsb" class="text-xs text-gray-900">BSB</label>
+            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+              <input formControlName="bsb" type="text" aria-label="BSB"
+                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="650-320">
+            </div>
+          </div>
         </div>
         <div class="w-1/4 pr-3">
-          <rounded-input label="Transcode" inputType="number" placeholder="98745588"></rounded-input>
+          <div class="mb-2">
+            <label for="transcode" class="text-xs text-gray-900">Transcode</label>
+            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+              <input formControlName="transcode" type="text" aria-label="Transcode"
+                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="98745588">
+            </div>
+          </div>
         </div>
         <div class="w-1/2 pr-3">
-          <rounded-input label="Account" inputType="text" placeholder="New Company"></rounded-input>
+          <div class="mb-2">
+            <label for="account" class="text-xs text-gray-900">Account</label>
+            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+              <input formControlName="account" type="text" aria-label="Account"
+                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="New Company">
+            </div>
+          </div>
         </div>
       </div>
       <div class="w-full flex">
         <div class="w-1/4 pr-3">
-          <rounded-input label="Amount" inputType="number" placeholder="50000.00">
-            <span class="mr-1">$</span>
-          </rounded-input>
+          <div class="mb-2">
+            <label for="amount" class="text-xs text-gray-900">Amount</label>
+            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+              <span class="mr-1">$</span>
+              <input formControlName="amount" type="text" aria-label="Amount"
+                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="50000.00">
+            </div>
+          </div>
         </div>
         <div class="w-1/2 pr-3">
-          <rounded-input label="Reference" inputType="text" placeholder="Lorem Ipsum"></rounded-input>
+          <div class="mb-2">
+            <label for="reference" class="text-xs text-gray-900">Reference</label>
+            <div class="flex items-center px-2 py-1 border border-gray-400 rounded">
+              <input formControlName="reference" type="text" aria-label="Reference"
+                class="w-full appearance-none bg-transparent border-none focus:outline-none" placeholder="Lorem Ipsum">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <!-- Functions -->
   <div>
-    <button class="px-4 py-2 bg-blue-500 rounded text-white">
+    <button class="px-4 py-2 bg-blue-500 rounded text-white" type="submit">
       Download ABA
     </button>
   </div>
-</div>
+</form>
