@@ -39,4 +39,8 @@ export class AppComponent implements OnInit {
 
     this.recipient.push(form);
   }
+
+  removeRecipient(i: number) {
+    this.recipient.removeAt(i);
+  }
 }
