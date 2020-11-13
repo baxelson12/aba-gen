@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormArray, FormBuilder } from '@angular/forms';
 import { AppService } from './app.service';
 
@@ -7,12 +7,12 @@ import { AppService } from './app.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   abaForm = this.fb.group({
     sender: this.fb.group({
       bank: [''],
       user: [''],
-      user_number: [''],
+      userNumber: [''],
       description: [''],
     }),
     recipient: this.fb.array([]),
@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
   constructor(private fb: FormBuilder, private as: AppService) {
     this.addRecipient();
   }
-  ngOnInit() {}
 
   onSubmit() {
     this.as.generateAba(this.abaForm.value);
@@ -32,10 +31,14 @@ export class AppComponent implements OnInit {
   addRecipient() {
     const form = this.fb.group({
       bsb: [''],
-      transcode: [''],
+      transactionCode: [''],
       account: [''],
       amount: [''],
+      accountTitle: [''],
       reference: [''],
+      traceBsb: [''],
+      traceAccount: [''],
+      remitter: [''],
     });
 
     this.recipient.push(form);

@@ -29,7 +29,7 @@
       </div>
       <div class="w-1/4 pr-3">
         <rounded-input
-          formControlName="user_number"
+          formControlName="userNumber"
           label="User Number"
           input-type="number"
           placeholder="6546565"
@@ -67,7 +67,7 @@
         </button>
       </div>
       <div class="mb-3 w-full flex">
-        <div class="w-1/8 pr-3">
+        <div class="w-1/4 pr-3">
           <rounded-input
             formControlName="bsb"
             label="BSB"
@@ -77,29 +77,65 @@
         </div>
         <div class="w-1/4 pr-3">
           <rounded-input
-            formControlName="transcode"
+            formControlName="transactionCode"
             label="Transcode"
             input-type="string"
             placeholder="98745588"
             aria-label="Transcode"></rounded-input>
         </div>
-        <div class="w-1/2 pr-3">
+      </div>
+      <div class="w-full mb-3 flex">
+        <div class="w-1/4 pr-3">
           <rounded-input
             formControlName="account"
             label="Account"
+            input-type="number"
+            placeholder="654848"
+            aria-label="Account number"></rounded-input>
+        </div>
+        <div class="w-1/2 pr-3">
+          <rounded-input
+            formControlName="accountTitle"
+            label="Account Title"
             input-type="string"
-            placeholder="New Company"
-            aria-label="Account"></rounded-input>
+            placeholder="Some Company"
+            aria-label="Account Title"></rounded-input>
         </div>
       </div>
-      <div class="w-full flex">
+      <div class="w-full mb-3 flex">
+        <div class="w-1/4 pr-3">
+          <rounded-input
+            formControlName="traceBsb"
+            label="Trace BSB"
+            input-type="number"
+            placeholder="668-849"
+            aria-label="Trace BSB"></rounded-input>
+        </div>
+        <div class="w-1/4 pr-3">
+          <rounded-input
+            formControlName="traceAccount"
+            label="Trace Account"
+            input-type="number"
+            placeholder="987654"
+            aria-label="Trace account"></rounded-input>
+        </div>
+        <div class="w-1/2 pr-3">
+          <rounded-input
+            formControlName="remitter"
+            label="Remitter"
+            input-type="string"
+            placeholder="Your Company"
+            aria-label="Remitter"></rounded-input>
+        </div>
+      </div>
+      <div class="w-full mb-3 flex">
         <div class="w-1/4 pr-3">
           <rounded-input
             formControlName="amount"
             label="Amount"
             input-type="number"
             placeholder="5000.00"
-            aria-label="Amount"></rounded-input>
+            aria-label="Amount">$</rounded-input>
         </div>
         <div class="w-1/2 pr-3">
           <rounded-input
