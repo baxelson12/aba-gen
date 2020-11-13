@@ -10,38 +10,40 @@
   <!-- Sender -->
   <div formGroupName="sender" class="mb-16">
     <legend class="mb-3 text-xl font-medium">Sending Party:</legend>
-    <div name="sender" class="px-4 py-5 shadow bg-white rounded flex justify-between">
-      <div class="w-1/8 pr-3">
-        <rounded-input
-          formControlName="bank"
-          label="Bank"
-          input-type="string"
-          placeholder="6546"
-          aria-label="Bank"></rounded-input>
-      </div>
-      <div class="w-1/4 pr-3">
-        <rounded-input
-          formControlName="user"
-          label="User"
-          input-type="string"
-          placeholder="Brad"
-          aria-label="User"></rounded-input>
-      </div>
-      <div class="w-1/4 pr-3">
-        <rounded-input
-          formControlName="userNumber"
-          label="User Number"
-          input-type="number"
+    <div name="sender" class="px-4 py-5 shadow bg-white rounded flex flex-col">
+      <div class="mb-3 md:w-full md:flex">
+        <div class="md:w-1/8 mr-3">
+          <rounded-input 
+            formControlName="bank" 
+            label="Bank" 
+            input-type="string" 
+            placeholder="6546" 
+            aria-label="Bank"></rounded-input>
+        </div>
+        <div class="md:w-1/4 mr-3">
+          <rounded-input 
+            formControlName="user" 
+            label="User" 
+            input-type="string" 
+            placeholder="Brad"
+            aria-label="User"></rounded-input>
+        </div>
+        <div class="md:w-1/4 mr-3">
+          <rounded-input 
+          formControlName="userNumber" 
+          label="User Number" 
+          input-type="number" 
           placeholder="6546565"
           aria-label="User Number"></rounded-input>
-      </div>
-      <div class="w-1/4 pr-3">
-        <rounded-input
-          formControlName="description"
-          label="Description"
-          input-type="string"
-          placeholder="Lorem Ipsum"
-          aria-label="Description"></rounded-input>
+        </div>
+        <div class="md:w-1/4 mr-3">
+          <rounded-input 
+            formControlName="description" 
+            label="Description" 
+            input-type="string" 
+            placeholder="Lorem Ipsum"
+            aria-label="Description"></rounded-input>
+        </div>
       </div>
     </div>
   </div>
@@ -68,8 +70,8 @@
           </svg>
         </button>
       </div>
-      <div class="mb-3 w-full flex">
-        <div class="w-1/4 pr-3">
+      <div class="md:w-full mb-3 md:flex">
+        <div class="md:w-1/4 mr-3">
           <rounded-input
             formControlName="bsb"
             label="BSB"
@@ -77,7 +79,7 @@
             placeholder="650-320"
             aria-label="BSB"></rounded-input>
         </div>
-        <div class="w-1/4 pr-3">
+        <div class="md:w-1/4 mr-3">
           <rounded-input
             formControlName="transactionCode"
             label="Transcode"
@@ -86,8 +88,8 @@
             aria-label="Transcode"></rounded-input>
         </div>
       </div>
-      <div class="w-full mb-3 flex">
-        <div class="w-1/4 pr-3">
+      <div class="md:w-full mb-3 md:flex">
+        <div class="md:w-1/4 mr-3">
           <rounded-input
             formControlName="account"
             label="Account"
@@ -95,7 +97,7 @@
             placeholder="654848"
             aria-label="Account number"></rounded-input>
         </div>
-        <div class="w-1/2 pr-3">
+        <div class="md:w-1/2 mr-3">
           <rounded-input
             formControlName="accountTitle"
             label="Account Title"
@@ -104,8 +106,8 @@
             aria-label="Account Title"></rounded-input>
         </div>
       </div>
-      <div class="w-full mb-3 flex">
-        <div class="w-1/4 pr-3">
+      <div class="md:w-full mb-3 md:flex">
+        <div class="md:w-1/4 mr-3">
           <rounded-input
             formControlName="traceBsb"
             label="Trace BSB"
@@ -113,7 +115,7 @@
             placeholder="668-849"
             aria-label="Trace BSB"></rounded-input>
         </div>
-        <div class="w-1/4 pr-3">
+        <div class="md:w-1/4 mr-3">
           <rounded-input
             formControlName="traceAccount"
             label="Trace Account"
@@ -121,7 +123,7 @@
             placeholder="987654"
             aria-label="Trace account"></rounded-input>
         </div>
-        <div class="w-1/2 pr-3">
+        <div class="md:w-1/2 mr-3">
           <rounded-input
             formControlName="remitter"
             label="Remitter"
@@ -130,8 +132,8 @@
             aria-label="Remitter"></rounded-input>
         </div>
       </div>
-      <div class="w-full mb-3 flex">
-        <div class="w-1/4 pr-3">
+      <div class="md:w-full mb-3 md:flex">
+        <div class="md:w-1/4 mr-3">
           <rounded-input
             formControlName="amount"
             label="Amount"
@@ -139,7 +141,7 @@
             placeholder="5000.00"
             aria-label="Amount">$</rounded-input>
         </div>
-        <div class="w-1/2 pr-3">
+        <div class="md:w-1/2 mr-3">
           <rounded-input
             formControlName="reference"
             label="Reference"
