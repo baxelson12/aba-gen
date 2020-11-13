@@ -8,6 +8,7 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  // Create initial form
   abaForm = this.fb.group({
     sender: this.fb.group({
       bank: [''],
@@ -17,18 +18,23 @@ export class AppComponent {
     }),
     recipient: this.fb.array([]),
   });
+
+  // Makes it easier to retrieve array controls
   get recipient(): FormArray {
     return this.abaForm.get('recipient') as FormArray;
   }
   constructor(private fb: FormBuilder, private as: AppService) {
+    // Start the app with one empty recipient/transaction
     this.addRecipient();
   }
 
+  // Ship to service, reset form
   onSubmit() {
     this.as.generateAba(this.abaForm.value);
     this.abaForm.reset();
   }
 
+  // Create one empty recipient/transaction
   addRecipient() {
     const form = this.fb.group({
       bsb: [''],
@@ -45,6 +51,7 @@ export class AppComponent {
     this.recipient.push(form);
   }
 
+  // Remove recipient/transaction
   removeRecipient(i: number) {
     this.recipient.removeAt(i);
   }

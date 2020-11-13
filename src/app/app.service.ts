@@ -12,9 +12,13 @@ export class AppService {
   transactions: Receiver[];
 
   generateAba(form) {
+    // Create sending party
     this.createAba(form.sender);
+    // Create transactions
     this.createTransactionsArray(form.recipient);
+    // Put it all together
     const file = this.aba.generate(this.transactions);
+    // Send for download
     this.download(file);
   }
 
@@ -23,13 +27,16 @@ export class AppService {
   }
 
   private createTransactionsArray(arr: Receiver[]) {
+    // Start with fresh array
     this.transactions = [];
+    // Iterate through received array
     arr.forEach((y) => {
       this.transactions.push(y);
     });
   }
 
   private download(file: string) {
+    // Needs to be a blob
     const blob = new Blob([file], { type: 'text/plain;charset=utf-8' });
     saveAs(blob, 'generated.aba');
   }
