@@ -9,16 +9,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => InputComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class InputComponent implements ControlValueAccessor {
   @Input('label') label: string;
   @Input('input-type') inputType: string = 'text';
   @Input('placeholder') placeholder: string;
   @Input('aria-label') ariaLabel: string;
-
 
   @Input('value') _value = '';
   onChange: any = () => {};
@@ -35,7 +34,7 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   registerOnChange(fn) {
-    this.onChange = fn
+    this.onChange = fn;
   }
 
   registerOnTouched(fn) {
@@ -43,8 +42,8 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   writeValue(value) {
-    if (value) {
-      this.value = value
+    if (value !== this._value) {
+      this.value = value;
     }
   }
 }
