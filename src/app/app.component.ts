@@ -26,6 +26,7 @@ export class AppComponent {
 
   onSubmit() {
     this.as.generateAba(this.abaForm.value);
+    this.abaForm.reset();
   }
 
   addRecipient() {
