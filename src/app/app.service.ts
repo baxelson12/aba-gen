@@ -1,33 +1,32 @@
 import { Injectable } from '@angular/core';
 import { saveAs } from 'file-saver';
 import * as ABA from 'aba-generator';
+import { Sender } from './shared/interfaces/sender';
+import { Receiver } from './shared/interfaces/receiver';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
+  aba: any;
+  transactions: Receiver[];
+
   generateAba(form) {
-    const aba = new ABA({
-      bank: form.sender.bank,
-      user: form.sender.user,
-      userNumber: form.sender.user_number,
-      description: form.sender.description,
-    });
-    const trans = {
-      bsb: form.recipient[0].bsb,
-      transactionCode: form.recipient[0].transcode,
-      account: form.recipient[0].account,
-      amount: form.recipient[0].amount,
-      accountTitle: 'Georgian Council of South Wales',
-      reference: form.recipient[0].reference,
-      traceBsb: '061123',
-      traceAccount: '1234567',
-      remitter: 'Acme Inc',
-    };
-
-    const file = aba.generate([trans]);
-
+    this.createAba(form.sender);
+    this.createTransactionsArray(form.recipient);
+    const file = this.aba.generate(this.transactions);
     this.download(file);
+  }
+
+  private createAba(sender: Sender) {
+    this.aba = new ABA(sender);
+  }
+
+  private createTransactionsArray(arr: Receiver[]) {
+    this.transactions = [];
+    arr.forEach((y) => {
+      this.transactions.push(y);
+    });
   }
 
   private download(file: string) {
