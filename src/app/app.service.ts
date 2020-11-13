@@ -32,6 +32,6 @@ export class AppService {
 
   private download(file: string) {
     const blob = new Blob([file], { type: 'text/plain;charset=utf-8' });
-    saveAs(blob, 'ABA.txt');
+    saveAs(blob, 'generated.aba');
   }
 }
