@@ -117,7 +117,8 @@
             aria-label="BSB"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].bsb }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].bsb : "" }}
           </span>
         </div>
         <div class="md:w-1/4 mr-3">
@@ -129,7 +130,8 @@
             aria-label="Transcode"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].transactionCode }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].transactionCode : "" }}
           </span>
         </div>
       </div>
@@ -143,7 +145,8 @@
             aria-label="Account number"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].account }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].account : "" }}
           </span>
         </div>
         <div class="md:w-1/2 mr-3">
@@ -155,7 +158,8 @@
             aria-label="Account Title"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].accountTitle }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].accountTitle : "" }}
           </span>
         </div>
       </div>
@@ -169,7 +173,8 @@
             aria-label="Trace BSB"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].traceBsb }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].traceBsb : "" }}
           </span>
         </div>
         <div class="md:w-1/4 mr-3">
@@ -181,7 +186,8 @@
             aria-label="Trace account"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].traceAccount }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].traceAccount : "" }}
           </span>
         </div>
         <div class="md:w-1/2 mr-3">
@@ -193,7 +199,8 @@
             aria-label="Remitter"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].remitter }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].remitter : "" }}
           </span>
         </div>
       </div>
@@ -208,7 +215,8 @@
             >$</rounded-input
           >
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].amount }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].amount : "" }}
           </span>
         </div>
         <div class="md:w-1/2 mr-3">
@@ -220,7 +228,8 @@
             aria-label="Reference"
           ></rounded-input>
           <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
-            {{ errors.recipient[i].reference }}
+            <!-- TODO: Dirty -->
+            {{ errors.recipient[i] ? errors.recipient[i].reference : "" }}
           </span>
         </div>
       </div>
