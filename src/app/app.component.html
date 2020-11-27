@@ -13,36 +13,54 @@
     <div name="sender" class="px-4 py-5 shadow bg-white rounded flex flex-col">
       <div class="mb-3 md:w-full md:flex">
         <div class="md:w-1/8 mr-3">
-          <rounded-input 
-            formControlName="bank" 
-            label="Bank" 
-            input-type="string" 
-            placeholder="6546" 
-            aria-label="Bank"></rounded-input>
+          <rounded-input
+            formControlName="bank"
+            label="Bank"
+            input-type="string"
+            placeholder="6546"
+            aria-label="Bank"
+          ></rounded-input>
+          <span *ngIf="errors.bank" class="text-xs italic text-red-500">{{
+            errors.bank
+          }}</span>
         </div>
         <div class="md:w-1/4 mr-3">
-          <rounded-input 
-            formControlName="user" 
-            label="User" 
-            input-type="string" 
+          <rounded-input
+            formControlName="user"
+            label="User"
+            input-type="string"
             placeholder="Brad"
-            aria-label="User"></rounded-input>
+            aria-label="User"
+          ></rounded-input>
+          <span *ngIf="errors.user" class="text-xs italic text-red-500">{{
+            errors.user
+          }}</span>
         </div>
         <div class="md:w-1/4 mr-3">
-          <rounded-input 
-          formControlName="userNumber" 
-          label="User Number" 
-          input-type="number" 
-          placeholder="6546565"
-          aria-label="User Number"></rounded-input>
+          <rounded-input
+            formControlName="userNumber"
+            label="User Number"
+            input-type="number"
+            placeholder="6546565"
+            aria-label="User Number"
+          ></rounded-input>
+          <span *ngIf="errors.userNumber" class="text-xs italic text-red-500">{{
+            errors.userNumber
+          }}</span>
         </div>
         <div class="md:w-1/4 mr-3">
-          <rounded-input 
-            formControlName="description" 
-            label="Description" 
-            input-type="string" 
+          <rounded-input
+            formControlName="description"
+            label="Description"
+            input-type="string"
             placeholder="Lorem Ipsum"
-            aria-label="Description"></rounded-input>
+            aria-label="Description"
+          ></rounded-input>
+          <span
+            *ngIf="errors.description"
+            class="text-xs italic text-red-500"
+            >{{ errors.description }}</span
+          >
         </div>
       </div>
     </div>
@@ -53,20 +71,39 @@
       <legend class="mb-3 text-xl font-medium">Receiving Party:</legend>
       <!-- Add button -->
       <button type="button" (click)="addRecipient()" class="focus:outline-none">
-      <svg class="h-6 w-6 fill-current text-green-500" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-          d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z" />
-      </svg>
+        <svg
+          class="h-6 w-6 fill-current text-green-500"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z"
+          />
+        </svg>
       </button>
     </div>
-    <div *ngFor="let recipient of recipient.controls; let i=index" [formGroupName]="i" class="px-4 py-5 mb-3 shadow bg-white rounded flex flex-col relative">
+    <div
+      *ngFor="let recipient of recipient.controls; let i = index"
+      [formGroupName]="i"
+      class="px-4 py-5 mb-3 shadow bg-white rounded flex flex-col relative"
+    >
       <div class="absolute top-0 right-0 p-2">
         <!-- Remove button -->
         <button (click)="removeRecipient(i)" class="focus:outline-none">
-          <svg class="w-5 h-5 stroke-current text-gray-500 hover:text-red-500" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            class="w-5 h-5 stroke-current text-gray-500 hover:text-red-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M10 14L12 12M12 12L14 10M12 12L10 10M12 12L14 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </button>
       </div>
@@ -77,7 +114,11 @@
             label="BSB"
             input-type="string"
             placeholder="650-320"
-            aria-label="BSB"></rounded-input>
+            aria-label="BSB"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].bsb }}
+          </span>
         </div>
         <div class="md:w-1/4 mr-3">
           <rounded-input
@@ -85,7 +126,11 @@
             label="Transcode"
             input-type="string"
             placeholder="98745588"
-            aria-label="Transcode"></rounded-input>
+            aria-label="Transcode"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].transactionCode }}
+          </span>
         </div>
       </div>
       <div class="md:w-full mb-3 md:flex">
@@ -95,7 +140,11 @@
             label="Account"
             input-type="number"
             placeholder="654848"
-            aria-label="Account number"></rounded-input>
+            aria-label="Account number"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].account }}
+          </span>
         </div>
         <div class="md:w-1/2 mr-3">
           <rounded-input
@@ -103,7 +152,11 @@
             label="Account Title"
             input-type="string"
             placeholder="Some Company"
-            aria-label="Account Title"></rounded-input>
+            aria-label="Account Title"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].accountTitle }}
+          </span>
         </div>
       </div>
       <div class="md:w-full mb-3 md:flex">
@@ -113,7 +166,11 @@
             label="Trace BSB"
             input-type="number"
             placeholder="668-849"
-            aria-label="Trace BSB"></rounded-input>
+            aria-label="Trace BSB"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].traceBsb }}
+          </span>
         </div>
         <div class="md:w-1/4 mr-3">
           <rounded-input
@@ -121,7 +178,11 @@
             label="Trace Account"
             input-type="number"
             placeholder="987654"
-            aria-label="Trace account"></rounded-input>
+            aria-label="Trace account"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].traceAccount }}
+          </span>
         </div>
         <div class="md:w-1/2 mr-3">
           <rounded-input
@@ -129,7 +190,11 @@
             label="Remitter"
             input-type="string"
             placeholder="Your Company"
-            aria-label="Remitter"></rounded-input>
+            aria-label="Remitter"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].remitter }}
+          </span>
         </div>
       </div>
       <div class="md:w-full mb-3 md:flex">
@@ -139,7 +204,12 @@
             label="Amount"
             input-type="number"
             placeholder="5000.00"
-            aria-label="Amount">$</rounded-input>
+            aria-label="Amount"
+            >$</rounded-input
+          >
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].amount }}
+          </span>
         </div>
         <div class="md:w-1/2 mr-3">
           <rounded-input
@@ -147,7 +217,11 @@
             label="Reference"
             input-type="string"
             placeholder="Lorem Ipsum"
-            aria-label="Reference"></rounded-input>
+            aria-label="Reference"
+          ></rounded-input>
+          <span class="text-xs italic text-red-500" *ngIf="errors.recipient">
+            {{ errors.recipient[i].reference }}
+          </span>
         </div>
       </div>
     </div>
@@ -155,7 +229,12 @@
   <!-- Functions -->
   <div>
     <!-- Submit -->
-    <button class="px-4 py-2 bg-blue-500 rounded text-white" type="submit">
+    <button
+      class="px-4 py-2 rounded text-white"
+      [ngClass]="abaForm.valid ? 'bg-blue-500' : 'bg-gray-400 italic'"
+      type="submit"
+      [disabled]="!abaForm.valid"
+    >
       Download ABA
     </button>
   </div>
