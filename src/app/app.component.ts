@@ -47,7 +47,14 @@ export class AppComponent implements OnInit {
   // Ship to service, reset form
   onSubmit() {
     this.as.generateAba(this.abaForm.value);
+    this.resetForm();
+  }
+
+  // Reset form
+  resetForm() {
     this.abaForm.reset();
+    this.clearRecipients();
+    this.addRecipient();
     this.abaForm.markAsPristine();
     this.abaForm.markAsUntouched();
   }
@@ -67,6 +74,13 @@ export class AppComponent implements OnInit {
     });
 
     this.recipient.push(form);
+  }
+
+  // Iterate through and clear array
+  clearRecipients() {
+    while (this.recipient.length !== 0) {
+      this.recipient.removeAt(0);
+    }
   }
 
   // Remove recipient/transaction

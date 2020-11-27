@@ -227,7 +227,7 @@
     </div>
   </div>
   <!-- Functions -->
-  <div>
+  <div class="space-x-4">
     <!-- Submit -->
     <button
       class="px-4 py-2 rounded text-white"
@@ -236,6 +236,13 @@
       [disabled]="!abaForm.valid"
     >
       Download ABA
+    </button>
+    <button
+      class="px-4 py-2 rounded text-white bg-orange-500"
+      type="button"
+      (click)="resetForm()"
+    >
+      Reset
     </button>
   </div>
 </form>
