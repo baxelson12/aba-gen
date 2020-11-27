@@ -47,6 +47,10 @@ export class AppComponent implements OnInit {
   // Ship to service, reset form
   onSubmit() {
     this.as.generateAba(this.abaForm.value);
+    this.resetForm();
+  }
+
+  resetForm() {
     this.abaForm.reset();
     this.abaForm.markAsPristine();
     this.abaForm.markAsUntouched();
