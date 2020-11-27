@@ -42,7 +42,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.errorHandler.handleErrors(this.abaForm, this.errors);
-    console.log(this.abaForm.value);
   }
 
   // Ship to service, reset form
